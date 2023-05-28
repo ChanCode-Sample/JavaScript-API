@@ -1,0 +1,1 @@
+// 最低限なのでinstallやactivateイベントの処理もなし
