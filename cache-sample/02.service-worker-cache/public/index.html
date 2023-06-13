@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Cache</title>
+  <script src="./javascripts/index.js" defer></script>
+</head>
+
+<body>
+  ServiceWorkerでキャッシュ操作確認手順<br>
+  <hr>
+  １：sw.jsのVERSION変数に「1」を指定し、my-cache-v1を作成<br>
+  ２：デベロッパーツール＞アプリケーション＞キャッシュストレージを展開＞my-cache-v1が存在する<br>
+  ３：sw.jsのVERSION変数に「2」に変更し、my-cache-v2を作成my-cache-v1を削除<br>  
+  ※デベロッパーツールでServiceWorkerの自動更新を設定しておくか、タブを閉じて開き直すと反映される<br>  
+  ４：デベロッパーツール＞アプリケーション＞キャッシュストレージを展開＞my-cache-v1が消えている<br>  
+</body>
+
+</html>

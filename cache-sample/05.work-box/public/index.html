@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Cache</title>
+  <script src="./javascripts/index.js" defer></script>
+</head>
+
+<body>
+  <div>
+    <h2>キャッシュ戦略の確認手順（共通）</h2>
+    <ol>
+      <li>sw.jsの各fetchイベントリスナーで試したいものを有効化
+        <ul>
+          <li>使わないものはコメントアウトする</li>
+        </ul>
+      </li>
+      <li>アプリを起動(npm iしてnpm start)</li>
+      <li>http://localhost:3000/にアクセス</li>
+      <li>sw.jsを有効化（デベロッパーツールで「再読み込み時に更新」を有効化しておくと便利）
+        <ul>
+          <li><strong>ただし各キャッシュ戦略の確認時はチェックを外しておくこと</strong></li>
+        </ul>
+      </li>
+    </ol>
+    <hr>
+  </div>
+
+
+  <div>
+    <h3>Cache Firstの確認</h3>
+    <h5>キャッシュがある場合キャッシュを返却</h5>
+    <ol>
+      <li>index.htmlに適当な変更を加える</li>
+      <li>ページをリロードする</li>
+      <li>表示されるindex.htmlの内容が変更前のまま</li>
+      <li>キャッシュにも変更後のindex.htmlが入っていない</li>
+    </ol>
+
+    <h5>キャッシュがない場合ネットワークから返却</h5>
+    <ol>
+      <li>デベロッパーツールから「my-cache-v1」を削除</li>
+      <li>index.htmlに適当な変更を加える</li>
+      <li>ページをリロードする</li>
+      <li>表示されるindex.htmlの内容が変更後のもの</li>
+      <li>キャッシュは作られない</li>
+    </ol>
+  </div>
+
+  <div>
+    <h3>Network Firstの確認</h3>
+    <h5>ネットワークが利用可能な場合ネットワークから返却</h5>
+    <ol>
+      <li>index.htmlに適当な変更を加える</li>
+      <li>ページをリロードする</li>
+      <li>表示されるindex.htmlの内容が変更後のもの</li>
+      <li>キャッシュは変更前のindex.htmlが入っている</li>
+    </ol>
+
+    <h5>ネットワークが利用できない場合キャッシュから返却</h5>
+    <ol>
+      <li>デベロッパーツールでオフライン状態に設定する</li>
+      <li>ページをリロードする</li>
+      <li>表示されるindex.htmlの内容が変更前のもの</li>
+      <li>キャッシュは変更前のindex.htmlが入ったまま</li>
+    </ol>
+  </div>
+
+  <div>
+    <h3>Stale While Revalidateの確認</h3>
+    <ol>
+      <li>index.htmlに適当な変更を加える</li>
+      <li>ページをリロードする</li>
+      <li>表示されるindex.htmlの内容が変更前のまま</li>
+      <li>キャッシュは変更後のindex.htmlが入っている</li>
+      <li>ページをリロードする</li>
+      <li>表示されるindex.htmlの内容が変更後のもの</li>
+      <li>キャッシュは変更後のindex.htmlが入っている</li>
+    </ol>
+  </div>
+
+  <div>
+    <h3>Network-Onlyの確認</h3>
+    <ol>
+      <li>index.htmlに適当な変更を加える</li>
+      <li>ページをリロードする</li>
+      <li>表示されるindex.htmlの内容が変更後のもの</li>
+      <li>キャッシュは変更前のindex.htmlが入っている</li>
+    </ol>
+  </div>
+
+  <div>
+    <h3>Cache-Onlyの確認</h3>
+    <ol>
+      <li>index.htmlに適当な変更を加える</li>
+      <li>ページをリロードする</li>
+      <li>表示されるindex.htmlの内容が変更前のまま</li>
+      <li>キャッシュにも変更後のindex.htmlが入っていない</li>
+    </ol>
+  </div>
+
+</body>
+
+</html>
