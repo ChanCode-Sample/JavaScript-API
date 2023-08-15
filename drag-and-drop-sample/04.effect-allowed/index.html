@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="app.js" defer></script>
+    <title>Document</title>
+</head>
+
+<body>
+    <!-- 星を移動させるサンプル -->
+    <div style="height: 100px;">
+        <h3 style="margin: 0; text-align: center;">コピー操作を許可</h3>
+        <h1 id="star" draggable="true" style="margin: 0; text-align: center;">☆</h1>
+    </div>
+    <div style="width: 1000px; margin: auto; display: flex;">
+        <div id="copy-box" style="width: 300px; border: solid;height: 100px; text-align: center; margin:auto;">
+            星を入れてね（コピー）</div>
+        <div id="move-box" style="width: 300px; border: solid;height: 100px; text-align: center; margin:auto;">
+            星を入れてね（移動）</div>
+    </div>
+
+    <hr>
+    <!-- effectAllowedプロパティとdropEffectプロパティの確認サンプル -->
+    <div style="width: 1000px; margin: auto; display: flex; justify-content: center;">
+        <div style="margin: 30px;">
+            <h1>effectAllowed</h1>
+            <h3 id="none-drag" draggable="true">none</h3>
+            <h3 id="copy-drag" draggable="true">copy</h3>
+            <h3 id="copylink-drag" draggable="true">copyLink</h3>
+            <h3 id="copymove-drag" draggable="true">copyMove</h3>
+            <h3 id="link-drag" draggable="true">link</h3>
+            <h3 id="linkmove-drag" draggable="true">linkMove</h3>
+            <h3 id="move-drag" draggable="true">move</h3>
+            <h3 id="all-drag" draggable="true">all</h3>
+            <h3 id="uninitialized-drag" draggable="true">uninitialized</h3>
+        </div>
+
+        <div style="margin: 30px;">
+            <h1 style="text-align: center;">dropEffect</h1>
+            <div class="drop-area" id="default-drop" style="width: 300px; border: solid;height: 100px; text-align: center; margin: 5px;">
+                <h3 style="margin: 5px;">デフォルトのnone</h3>
+                全てのドロップ許可
+            </div>
+            <div class="drop-area" id="none-drop" style="width: 300px; border: solid;height: 100px; text-align: center; margin: 5px;">
+                <h3 style="margin: 5px;">none</h3>
+                ドロップ禁止
+            </div>
+            <div class="drop-area" id="copy-drop" style="width: 300px; border: solid;height: 100px; text-align: center; margin: 5px;">
+                <h3 style="margin: 5px;">copy</h3>
+                copy, copyLink, copyMove, all, uninitialized
+            </div>
+            <div class="drop-area" id="move-drop" style="width: 300px; border: solid;height: 100px; text-align: center; margin: 5px;">
+                <h3 style="margin: 5px;">move</h3>
+                move, copyMove, linkMove, all, uninitialized
+            </div>
+            <div class="drop-area" id="link-drop" style="width: 300px; border: solid;height: 100px; text-align: center; margin: 5px;">
+                <h3 style="margin: 5px;">link</h3>
+                link, copyLink, linkMove, all, uninitialized
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
