@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script lang="javascript" src="https://cdn.sheetjs.com/xlsx-0.20.0/package/dist/xlsx.full.min.js" defer></script>
+    <script src="app.js" defer></script>
+    <title>Document</title>
+    <style>
+        #file-drop {
+            height: 150px;
+            width: 500px;
+            border: solid;
+            background-color: azure;
+        }
+        #result-list{
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+        }
+    </style>
+</head>
+
+<body>
+    画像、音声、動画、PDFファイルを選択してね<br>
+    <input type="file" id="file-input" multiple accept=".xlsx, .xls">
+    <div id="file-drop">ここに画像、音声、動画、PDFファイルをドロップしてね</div>
+    <button id="revoke-btn">オブジェクトURLの解放</button>
+
+    <hr>
+    <h2>選択したファイルの中身</h2>
+    <ul id="result-list"></ul>
+</body>
+
+</html>

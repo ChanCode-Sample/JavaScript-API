@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script lang="javascript" src="https://cdn.sheetjs.com/xlsx-0.20.0/package/dist/xlsx.full.min.js" defer></script>
+    <script src="app.js" defer></script>
+    <title>Document</title>
+    <style>
+        #file-drop {
+            height: 150px;
+            width: 500px;
+            border: solid;
+            background-color: azure;
+        }
+    </style>
+</head>
+
+<body>
+    Excelファイルを選択してね<br>
+    <input type="file" id="file-input" multiple accept=".xlsx, .xls">
+    <div id="file-drop">ここにExcelファイルをドロップしてね</div>
+
+    <hr>
+    <h2>選択したファイルの中身</h2>
+    ※ CSVとJSONは改行されず1行で表示されます。コンソールでは綺麗に表示されます。
+    <ul id="result-list"></ul>
+</body>
+
+</html>

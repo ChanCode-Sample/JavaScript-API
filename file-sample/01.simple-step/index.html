@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="app.js" defer></script>
+    <title>Document</title>
+    <style>
+        #file-drop {
+            height: 150px;
+            width: 500px;
+            border: solid;
+            background-color: azure;
+        }
+    </style>
+</head>
+
+<body>
+    <input type="file" id="file-input" multiple>
+    <div id="file-drop">ここにファイルをドロップしてね</div>
+
+    <hr>
+    <h2>選択されたファイル一覧</h2>
+    <ul id="result-list"></ul>
+</body>
+
+</html>
